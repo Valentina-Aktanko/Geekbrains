@@ -48,33 +48,24 @@
 		return even;
 	}
 
-	function Print10(n) {
-		
-		if(n < 10)
-			Print10(n + 1);
-		document.write(n + "<br>");
-	}
-	
 	// a. вывод массива из N элементов
 	var n = 5;
-	// alert("Массив из " + n + " элементов: " + generateArray(n));
+	alert("Массив из " + n + " элементов: " + generateArray(n));
 
 	// b. сумма элементов массива
 	var numbers = [1, 2, 3, 4, 5];
-	// alert("Сумма элементов массива [" + numbers + "]: " + getSumNumbers(numbers));
+	alert("Сумма элементов массива [" + numbers + "]: " + getSumNumbers(numbers));
 
 	// c. поиск максимального числа
 	var numbers = [10, 2, 40, 5, 0];
-	// alert("Максимальное число из массива [" + numbers + "]: " + getMaxItem(numbers));
+	alert("Максимальное число из массива [" + numbers + "]: " + getMaxItem(numbers));
 
 	// d. поиск минимального числа
 	var numbers = [10, 2, 40, 5, 0];
-	// alert("Минимальное число из массива [" + numbers + "]: " + getMinItem(numbers));
+	alert("Минимальное число из массива [" + numbers + "]: " + getMinItem(numbers));
 
 	// f. поиск четных чисел
 	var numbers = [10, 2, 3, 5, 20];
-	// alert("Четные числа из массива [" + numbers + "]: " + getEvenItems(numbers));
+	alert("Четные числа из массива [" + numbers + "]: " + getEvenItems(numbers));
 
-	// рекурсия
-	Print10(1);
 </script>
