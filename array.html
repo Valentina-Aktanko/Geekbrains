@@ -2,70 +2,65 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 	
-	function generateArray(n) {
-		var arr = [];
+	function getAscSequence(n) {
+		var array = [];
 		for (var i = 1; i <= n; i++) {
-			arr.push(i);
+			array.push(i);
 		}
-		return arr;
+		return array;
 	}
 
-	function getSumNumbers(numbers) {
+	function getSumItems(array) {
 		var sum = 0;
-		for (var i = 0; i <= numbers.length-1; i++) {
-			sum = sum + numbers[i];
+		for (var i = 0; i < array.length; i++) {
+			sum += array[i];
 		}
 		return sum;
 	}
 
-	function getMaxItem(numbers) {
-		var max = numbers[0];
-		for (var i = 1; i <= numbers.length-1; i++) {
-			if(numbers[i] > max){
-				max = numbers[i];
+	function getMaxItem(array) {
+		var max = array[0];
+		for (var i = 1; i < array.length; i++) {
+			if(array[i] > max){
+				max = array[i];
 			}
 		}
 		return max;
 	}
 
-	function getMinItem(numbers) {
-		var min = numbers[0];
-		for (var i = 1; i <= numbers.length-1; i++) {
-			if(numbers[i] < min){
-				min = numbers[i];
+	function getMinItem(array) {
+		var min = array[0];
+		for (var i = 1; i < array.length; i++) {
+			if(array[i] < min){
+				min = array[i];
 			}
 		}
 		return min;
 	}
 
-	function getEvenItems(numbers) {
+	function getEvenNumbers(array) {
 		var even = [];
-		for (var i = 0; i <= numbers.length-1; i++) {
-			if(numbers[i] % 2 == 0){
-				even.push(numbers[i]);
+		for (var i = 0; i < array.length; i++) {
+			if(array[i] % 2 == 0){
+				even.push(array[i]);
 			}
 		}
 		return even;
 	}
 
-	// a. вывод массива из N элементов
+	
 	var n = 5;
-	alert("Массив из " + n + " элементов: " + generateArray(n));
+	var numbers = getAscSequence(n);
 
+	// a. вывод массива из N элементов
+	alert("Массив из " + n + " элементов: " + getAscSequence(n));
 	// b. сумма элементов массива
-	var numbers = [1, 2, 3, 4, 5];
-	alert("Сумма элементов массива [" + numbers + "]: " + getSumNumbers(numbers));
-
+	alert("Сумма элементов массива [" + numbers + "]: " + getSumItems(numbers));
 	// c. поиск максимального числа
-	var numbers = [10, 2, 40, 5, 0];
 	alert("Максимальное число из массива [" + numbers + "]: " + getMaxItem(numbers));
-
 	// d. поиск минимального числа
-	var numbers = [10, 2, 40, 5, 0];
 	alert("Минимальное число из массива [" + numbers + "]: " + getMinItem(numbers));
-
 	// f. поиск четных чисел
-	var numbers = [10, 2, 3, 5, 20];
-	alert("Четные числа из массива [" + numbers + "]: " + getEvenItems(numbers));
+	alert("Четные числа из массива [" + numbers + "]: " + getEvenNumbers(numbers));
 
 </script>
