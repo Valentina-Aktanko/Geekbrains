@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function Print10(n) {
+			
+			// вывод элементов от n до 10, при n < 10
+			document.write(n + "<br>");
+			if(n < 10)
+				Print10(n + 1);
+			// если вывод d документ вставить посkе цикла, то выведет в обратном порядке (от 10 до n, при n < 10)
+			// document.write(n + "<br>");
+	}
+
+	function factorial(n){
+		if (n == 0){
+			return 1;
+		}else if(n < 0){
+			alert("Факториал рассчитывается только для натуральных чисел.");
+		}else{
+			return factorial(n - 1) * n;
+		}
+	}
+
+	// рекурсивный вывод элементов от n до 10
+	var n = 1;
+	Print10(n);
+
+	// рекурсивный факториал
+	alert(factorial(5));
+
+
+</script>
