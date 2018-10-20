@@ -1,42 +1,58 @@
 <meta charset="utf-8">
 <script type="text/javascript">
 
-	function askRiddle(riddle, answers) {
-		var userAnswer = prompt(riddle);
+	function askQuestion(question, answers) {
+		var userAnswer = prompt(question);
 		userAnswer = userAnswer.toLowerCase();
-		if (find(answers, userAnswer) != -1) {
-			alert("Поздравляем, Вы угадали!");
-			score ++;
-		} else 
-			alert("Вы не угадали.");
-	}
-
-	function find(array, value) {
-		for (var i = 0; i < array.length; i++) {
-			if (array[i] == value)
-				return i;
+		for (var i = 0; i < answers.length; i++) {
+			if (userAnswer == answers[i]) {
+				score ++;
+				return;
+			}
 		}
-		return -1;
+				
+		alert("Вы не угадали.");
 	}
 
 	var score = 0;
 	
-	var riddle = "Много бед таят леса.\nВолк, медведь там и лиса!\nНаш зверек живет в тревоге,\nОт беды уносит ноги…\nНу-ка, быстро отгадай-ка,\nКак зверек зовется? …"; 
+	var question = "Много бед таят леса.\nВолк, медведь там и лиса!\nНаш зверек живет в тревоге,\nОт беды уносит ноги…\nНу-ка, быстро отгадай-ка,\nКак зверек зовется? …"; 
 	var answers = ["зайка", "заяц", "зайчик"];
-	askRiddle(riddle, answers);
+	askRiddle(question, answers);
 
-	riddle = "Хитрая плутовка, рыжая головка,\nХвост пушистый – краса!А зовут её…";
+	question = "Хитрая плутовка, рыжая головка,\nХвост пушистый – краса!А зовут её…";
 	answers = ["лиса", "лис", "лисичка"];
-	askRiddle(riddle, answers);
+	askRiddle(question, answers);
 
-	riddle = "Он ходит голову задрав,\nНе потому, что гордый нрав,\nНе потому, что важный граф,\nА потому, что он …";
-	answers = ["жираф", "жирафик"];
-	askRiddle(riddle, answers);
+	question = "Он ходит голову задрав,\nНе потому, что гордый нрав,\nНе потому, что важный граф,\nА потому, что он …";
+	answers = ["жираф"];
+	askRiddle(question, answers);
 
-	riddle = "По реке плывёт бревно.\nОх и злющее оно!\nТем, кто в речку угодил\nНос откусит …";
-	answers = ["крокодил", "крокодильчик"];
-	askRiddle(riddle, answers);	
+	question = "По реке плывёт бревно.\nОх и злющее оно!\nТем, кто в речку угодил\nНос откусит …";
+	answers = ["крокодил"];
+	askRiddle(question, answers);	
 	
 	alert("Правильных ответов: " + score);
 
+	/* //альтернативный алгоритм
+	var question = [
+		["Много бед таят леса.\nВолк, медведь там и лиса!\nНаш зверек живет в тревоге,\nОт беды уносит ноги…\nНу-ка, быстро отгадай-ка,\nКак зверек зовется? …", ["зайка", "заяц", "зайчик"]],
+		["Хитрая плутовка, рыжая головка,\nХвост пушистый – краса! А зовут её…", ["лиса", "лис", "лисичка"]],
+		["Он ходит голову задрав,\nНе потому, что гордый нрав,\nНе потому, что важный граф,\nА потому, что он …", ["жираф"]],
+		["По реке плывёт бревно.\nОх и злющее оно!\nТем, кто в речку угодил\nНос откусит …", ["крокодил"]]
+	]; 
+
+	var score = 0;
+
+	for (var i = 0; i < question.length; i++) {
+		var quest = question[i][0];
+		var answers = question[i][1];
+		askQuestion(quest, answers);
+	}*/
+
 </script>
+
+
+	
+
+	
